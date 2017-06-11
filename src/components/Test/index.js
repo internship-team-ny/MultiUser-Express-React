@@ -10,7 +10,7 @@ class Test extends Component{
     url: '/login',
     params: {
       username: 'Bob',
-      password: 'PASSWORD123'
+      password: 'PASSWORD12'
       }
     })
     .then(function(response){

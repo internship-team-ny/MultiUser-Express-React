@@ -25,9 +25,7 @@ app.get('*', (req, res) => {
 app.post('/login',(req,res) =>{
   // console.log(req.query);
 
-  users.login(req.query);
-
-  res.json({success: "true"});
+  users.login(req.query, res);
 });
 
 module.exports = app;

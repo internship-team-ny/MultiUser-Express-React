@@ -1,0 +1,28 @@
+{
+  "name": "routed-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.17.2",
+    "classnames": "^2.2.5",
+    "express": "^4.15.3",
+    "history": "^4.6.1",
+    "mongodb": "^2.2.28",
+    "morgan": "^1.8.2",
+    "node-etcd": "^3.0.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router": "^3.0.5",
+    "react-router-redux": "^4.0.8"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

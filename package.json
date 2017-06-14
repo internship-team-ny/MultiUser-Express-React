@@ -2,6 +2,7 @@
   "name": "routed-react",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001/",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
@@ -11,6 +12,7 @@
     "mongodb": "^2.2.28",
     "morgan": "^1.8.2",
     "node-etcd": "^3.0.2",
+    "nodemon": "^1.11.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^3.0.5",
@@ -23,6 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon server"
   }
 }

@@ -1,3 +1,6 @@
+//PASSPORT MODULE
+//nodemon
+
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
   // Connection URL
@@ -44,13 +47,36 @@ module.exports = {
       assert.equal(null, err);
       console.log("Connected successfully to server");
 
-      // var users = db.collection('users')
-      // users.deleteMany({});
-
       findUser(db, json, function(success){
         db.close();
         res.json({success: success});
       });
+    });
+  },
+
+  clear: function(){
+    // Use connect method to connect to the server
+    MongoClient.connect(url, function(err, db) {
+      assert.equal(null, err);
+      console.log("Connected successfully to server");
+
+      var users = db.collection('users')
+      users.deleteMany({});
+      db.close();
+    });
+  },
+
+  show: function(){
+    // Use connect method to connect to the server
+    MongoClient.connect(url, function(err, db) {
+      assert.equal(null, err);
+      console.log("Connected successfully to server");
+
+      var users = db.collection('users')
+      users.find({}).toArray(function(err,docs){
+        console.log(docs);
+      })
+      db.close();
     });
   }
 };

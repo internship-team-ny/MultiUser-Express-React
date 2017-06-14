@@ -1,6 +1,9 @@
-## Running the server and serve the pages, run following commands in order
-- ### npm run build
-- ### node server
+### Development Guide
+To develop both React JS and Node js code simultaneously, run following commands each in a separate terminal.
+- npm run server
+- npm start
+
+This way both server and client can be worked on simultaneously and will be automatically updated on any changes made to the files.
 
 <!-- ## Specific Node Packages Required
 - ### npm install --save react-router@3.0.5 -->

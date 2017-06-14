@@ -18,12 +18,32 @@ class Test extends Component{
     });
   }
 
+  clearPOST(e){
+    e.preventDefault();
+    axios({
+      method: 'post',
+      url: '/clear'
+    });
+  }
+
+  showUsers(e){
+    e.preventDefault();
+    axios({
+      method: 'post',
+      url: '/show'
+    });
+  }
+
   render(){
     return(
       <div className="App">
         <h3> Hello World </h3>
         <br />
-        <button onClick={this.sendPOST} > BUTTON </button>
+        <button onClick={this.sendPOST} > LOGIN EX </button>
+        <br />
+        <button onClick={this.showUsers} > SHOW </button>
+        <br />
+        <button onClick={this.clearPOST}> CLEAR </button>
       </div>
     );
   }

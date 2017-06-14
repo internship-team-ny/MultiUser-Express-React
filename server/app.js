@@ -28,4 +28,12 @@ app.post('/login',(req,res) =>{
   users.login(req.query, res);
 });
 
+app.post('/clear',(req,res) =>{
+  users.clear();
+})
+
+app.post('/show',(req,res) =>{
+  users.show();
+})
+
 module.exports = app;

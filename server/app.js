@@ -7,7 +7,6 @@ var users = require('./users')
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
-
 const app = express();
 
 // Setup logger
@@ -17,21 +16,28 @@ app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:htt
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
 // Always return the main index.html, so react-router render the route in the client
-app.get('*', (req, res) => {
+app.get(['/','/hashtag','/test'], (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
 // req.query contains the JSON from the client
 app.post('/login',(req,res) =>{
-  // console.log(req.query);
-
   users.login(req.query, res);
 });
 
+//CHECKING COOKIE INFO TO SEE IF LOGIN INFO AND SESION ARE ALL VALID
+app.post('/checkSession',(req,res) =>{
+  users.checkSession(req.query, res);
+})
+
+//METHODS BELOW JUST FOR TESTING PURPOSES
+
+//TO CLEAR THE USERS COLLECTION IN MONGODB
 app.post('/clear',(req,res) =>{
   users.clear();
 })
 
+//TO DUMP ALL THE ENTRIES IN THE USERS COLLECTION IN MONGODB
 app.post('/show',(req,res) =>{
   users.show();
 })

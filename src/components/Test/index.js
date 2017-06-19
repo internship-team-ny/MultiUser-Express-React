@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import cookie from 'react-cookies'
 import axios from 'axios';
 import './style.css';
 
@@ -32,6 +33,13 @@ class Test extends Component{
       method: 'post',
       url: '/show'
     });
+  }
+
+  componentWillMount(){
+    cookie.save('username', 'Bob');
+  }
+  componentDidMount(){
+    console.log(cookie.load('username'))
   }
 
   render(){
